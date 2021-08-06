@@ -1,82 +1,85 @@
-import Head from 'next/head'
+import Page from "../components/Page";
+import Link from "next/link";
 
-export default function Home() {
+export default function IndexPage() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <Page
+      title="Introduction"
+      swimlane={{
+        url: "https://swimlanes.io/#3VbLUsIwFF3br7hL6Agf0IULwecIzlD3NiYXiIYEkwDy96ZNn6B1RgcZ3bTT5OQ+zrn3ppZbgRFMUDLUXM5gw+0cxvhm+88mCJR2yxEMcY1CLVGfQox6nb4Hw/EpnGu1MaiDgE8jGMQT6DyG4UBwlBZibrGyG4aP3QAqQ9A7S02kppdCbQEXS7uF64fRHQwVbUNSb54qhkGvF0GoV9LyBUahO5UHVJ65kdxyIlwcrys01iHccrqbAyOXj2Ru2yyVNNi0UGKSCRJqh/ejvs7ySeq4wlUyRUvnya6rhp0Ssu+ujtPo/QTu6bmN46uM29gSy6nn9golavep5Efklh+18L12eRIPKrapMkkb2R6KzCvDjqgMCuPqNMzKc75leeKfMVgp5rF4DMl8O3jSnWTsi3bwwJJN489lbB6K9JOc88L1pdIbolm1nwdfg9SK6eNaqo5kLnf765+pzIvO5JJqXDgpHL2/0aXfq5a9fobOlAjxROhL63g+RGsbRxW6iJqlUUttgjNPHtZMFeXVwK2J4CzFdZ5WXLBuVbhFTANC51jqC3+v0C7ycXLBZljcrbptnBz5Ami769MUBFkwArfxDydXtlkwAZ2VSf9hKgem+79Gzjs=",
+        src: "https://static.swimlanes.io/d3f62369438be32bbed34e66f05de46e.png",
+        width: 1300,
+        height: 3258,
+      }}
+      description={
+        <>
+          <p className="text-sm mb-3">
+            Over the past years JavaScript frameworks have created new patterns
+            for rendering to achieve the optimal performance for page rendering.
+            This guide tries to explain the different patterns and discuss their
+            pros and cons using Next.js.
+          </p>
 
-      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
-        </h1>
-
-        <p className="mt-3 text-2xl">
-          Get started by editing{' '}
-          <code className="p-3 font-mono text-lg bg-gray-100 rounded-md">
-            pages/index.js
-          </code>
-        </p>
-
-        <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
-          <a
-            href="https://nextjs.org/docs"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Find in-depth information about Next.js features and API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Learn &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Learn about Next.js in an interactive course with quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Examples &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Discover and deploy boilerplate example Next.js projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className="flex items-center justify-center w-full h-24 border-t">
-        <a
-          className="flex items-center justify-center"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="h-4 ml-2" />
-        </a>
-      </footer>
-    </div>
-  )
+          <ul className="space-y-3">
+            <li>
+              <Link href="/client-side-rendering" passHref>
+                <a className="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                  Client Side Rendering (CSR)
+                </a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/server-side-rendering" passHref>
+                <a className="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                  Server Side Rendering (SSR)
+                </a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/server-side-traditional" passHref>
+                <a className="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                  Server Side Rendering Traditional (SSR)
+                </a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/static-site-generation" passHref>
+                <a className="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                  Static Site Generation (SSG)
+                </a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/incremental-static-site-generation" passHref>
+                <a className="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                  incremental Static Site Generation (iSSG)
+                </a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/edge-side-rerendering" passHref>
+                <a className="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                  Edge Slice Rerendering (ESR)
+                </a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/server-components" passHref>
+                <a className="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                  Server Components
+                </a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/progressive-hydration" passHref>
+                <a className="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                  Progressive Hydration
+                </a>
+              </Link>
+            </li>
+          </ul>
+        </>
+      }
+    ></Page>
+  );
 }
